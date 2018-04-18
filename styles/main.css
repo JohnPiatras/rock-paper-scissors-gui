@@ -1,8 +1,11 @@
 @import url("reset.css");
 
+
+
 h1 {
 	font-size: 64pt;
-	text-align:center;
+    text-align:center;
+    margin-bottom:100px;
 }
 
 p {
@@ -10,4 +13,183 @@ p {
 	font-size: 24pt;
 	text-align:center;
 }
+/*Make game box have jaggy pixelated corners*/
+#game{
+    position:relative;
+    left:0;
+    top:0;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:160px;
+    padding-right:160px;
+    width:60%;
+    min-width:640px;
+    height:480px;
+    border:1px solid black;
+    image-rendering: -moz-crisp-edges;
+    border:10px solid blue;
+    background-color:#AAA
+}
 
+.hide{
+    display:none;
+}
+
+#player-container{
+    position:absolute;
+    height:240px;
+    width:320px;
+    bottom:0px;
+}
+
+/*#player-sprite{
+    animation: player-idle 1s infinite steps(2);
+    width:16px;
+    height:24px;
+    background-image:url("../images/AlexKidd.png");
+    background-repeat:no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    transform:scale(10.0);
+    transform-origin: 0 0;   
+}*/
+
+#player-sprite{
+    width:320px;
+    height:240px;
+    background-image:url("../images/AlexKidd.png");
+    background-repeat:no-repeat;
+    background-size:600%;
+}
+
+.player-sprite-idle{
+    animation: player-idle 1s infinite steps(2);
+}
+
+@keyframes player-idle {
+    from {
+        background-position: 20% 0;
+    }
+    to {
+        background-position: 60% 0;
+    }
+}
+
+.player-sprite-choosing{
+    animation: player-choosing 1s steps(2);
+    animation-iteration-count: 3;
+}
+
+@keyframes player-choosing {
+    from {
+        background-position: 0% 0;
+    }
+    to {
+        background-position: 40% 0;
+    }
+}
+
+.player-sprite-rock{
+    background-position: 60% 0;
+}
+
+.player-sprite-scissors{
+    background-position: 80% 0;
+}
+
+.player-sprite-paper{
+    background-position: 100% 0;
+}
+
+#computer-container{
+    position:absolute;
+    height:320px;
+    width:320px;
+    right:0px;
+    bottom:0px;
+    padding:inherit;
+}
+
+#computer-sprite{
+   
+    width:320px;
+    height:320px;
+    background-image:url("../images/Boss.png");
+    background-repeat:no-repeat;
+    background-size:900%;  
+}
+
+.computer-sprite-idle{
+    animation: computer-idle 1s infinite steps(2);
+}
+
+@keyframes computer-idle {
+    from {
+        background-position: 12.5% 0;
+    }
+    to {
+        background-position: -12.5% 0;
+    }
+}
+
+.computer-sprite-choosing{
+    animation: computer-choosing 1s steps(2);
+    animation-iteration-count: 3;
+}
+
+@keyframes computer-choosing {
+    from {
+        background-position: 25% 0;
+    }
+    to {
+        background-position: 50% 0;
+    }
+}
+
+.computer-sprite-rock{
+    background-position:50% 0;
+}
+
+.computer-sprite-scissors{
+    background-position:62.5% 0;
+}
+
+.computer-sprite-paper{
+    background-position:75% 0;
+}
+
+#hand-buttons{
+    position:relative;
+    height:128px;
+    left:0px;
+    top:128px;
+    margin-left:24px;
+}
+
+.hand-bttn{
+    top:0;
+    left:0;
+    position:absolute;
+    display:inline-block;
+    width:96px;
+    height:96px;
+    background-image:url("../images/hand-buttons.png");
+    background-repeat:no-repeat;
+    background-position-y:0px;
+    background-size:300%;
+    transform-origin:50% 200%;
+}
+
+#rock-bttn{
+    background-position-x:0;
+    transform:rotate(-45deg);
+}
+
+#paper-bttn{
+    background-position-x:100%;
+}
+
+#scissors-bttn{
+    background-position-x:50%;
+    transform:rotate(45deg);
+}

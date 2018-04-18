@@ -9,9 +9,26 @@
 	</head>
 	<body>
 		<h1>Rock Paper Scissors</h1>	
-		<p>Open up the console to play!</p>
-		<p>Type game() to start a 5 round game of Rock Paper Scissors!</p>
+
+		<div id="game">
+			<div id="hand-buttons">
+				<span id="rock-bttn" class="hand-bttn button"></span>
+				<span id="paper-bttn" class="hand-bttn button"></span>
+				<span id="scissors-bttn" class="hand-bttn button"></span>
+			</div>
+			<div id="player-container">
+				<div id="player-sprite" class="player-sprite-idle"></div>
+			</div>
+			<div id="computer-container">
+				<div id="computer-sprite" class="computer-sprite-idle"></div>
+			</div>
+		</div>
+
+		<audio id="music-loop" src="./audio/music-loop.mp3"></audio>
+		<audio id="music-finish" src="./audio/music-finish.mp3"></audio>
+		<audio id="snd-choose" src="./audio/choose_hand.mp3"></audio>
 		<script src="scripts/main.js"></script>
+
 		
 	</body>
 </html>
