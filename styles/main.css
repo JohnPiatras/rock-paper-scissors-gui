@@ -1,12 +1,15 @@
 @import url("reset.css");
 
-
+body {
+    font-family:"Press Start 2P";
+}
 
 h1 {
-	font-size: 64pt;
+	font-size: 48pt;
     text-align:center;
-    margin-bottom:100px;
+    margin-bottom:32px;
 }
+
 
 p {
 	margin-top:10%;
@@ -20,43 +23,40 @@ p {
     top:0;
     margin-left:auto;
     margin-right:auto;
-    padding-left:160px;
-    padding-right:160px;
-    width:60%;
+    padding-left:120px;
+    padding-right:120px;
+    width:50%;
     min-width:640px;
     height:480px;
-    border:1px solid black;
     image-rendering: -moz-crisp-edges;
     border:10px solid blue;
     background-color:#AAA
+}
+
+#score h2{
+    font-size:48pt;
+}
+
+#score h3{
+    font-size:32pt;
+}
+
+
+#score{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .hide{
     display:none;
 }
 
-#player-container{
-    position:absolute;
-    height:240px;
-    width:320px;
-    bottom:0px;
-}
-
-/*#player-sprite{
-    animation: player-idle 1s infinite steps(2);
-    width:16px;
-    height:24px;
-    background-image:url("../images/AlexKidd.png");
-    background-repeat:no-repeat;
-    background-position-x: 0px;
-    background-position-y: 0px;
-    transform:scale(10.0);
-    transform-origin: 0 0;   
-}*/
-
 #player-sprite{
-    width:320px;
-    height:240px;
+    position:absolute;
+    bottom:0;
+    width:240px;
+    height:180px;
     background-image:url("../images/AlexKidd.png");
     background-repeat:no-repeat;
     background-size:600%;
@@ -77,7 +77,7 @@ p {
 
 .player-sprite-choosing{
     animation: player-choosing 1s steps(2);
-    animation-iteration-count: 3;
+    animation-iteration-count: 2;
 }
 
 @keyframes player-choosing {
@@ -109,11 +109,19 @@ p {
     bottom:0px;
     padding:inherit;
 }
+#container{
+    position:relative;
+    top:0;
+    height:100%;
+}
+
 
 #computer-sprite{
-   
-    width:320px;
-    height:320px;
+    position:absolute;
+    bottom:0;
+    right:0;
+    width:240px;
+    height:240px;
     background-image:url("../images/Boss.png");
     background-repeat:no-repeat;
     background-size:900%;  
@@ -159,11 +167,11 @@ p {
 }
 
 #hand-buttons{
-    position:relative;
+    position:absolute;
     height:128px;
-    left:0px;
-    top:128px;
-    margin-left:24px;
+    left:5px;
+    bottom:180px;
+
 }
 
 .hand-bttn{
@@ -192,4 +200,53 @@ p {
 #scissors-bttn{
     background-position-x:50%;
     transform:rotate(45deg);
+}
+
+
+#dialog-box{
+    position:absolute;
+    left:15%;
+    width:65%;
+    height:35%;
+    border:10px solid blue;
+    background-color:#CCC;
+
+}
+
+#dialog-box p{
+    margin:10px;
+}
+
+.dialog_button{
+    font-size:16pt;
+    font-family:"Press Start 2P";
+    background-color:blue;
+    color:yellow;
+    border:10px solid yellow;
+    width:50%;
+    margin-left:25%;
+    padding:10px;
+    text-align:center;
+}
+
+.dialog_button:hover{
+    box-shadow:inset 5px 5px 10px black;
+
+
+}
+
+#music-bttn{
+    position:absolute;
+    top:8px;
+    left:8px;
+    width:48px;
+    height:48px;
+    background-image:url("../images/music-bttn.png");
+    background-size:200%;
+    border:none;
+    background-color:#aaa;
+}
+
+.music-bttn-off{
+    background-position-x:100%;
 }

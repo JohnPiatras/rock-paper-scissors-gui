@@ -6,21 +6,33 @@
 
 		<title>Rock, Paper, Scissors</title>
 		<link rel="stylesheet" href="styles/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> 
 	</head>
 	<body>
 		<h1>Rock Paper Scissors</h1>	
 
 		<div id="game">
-			<div id="hand-buttons">
-				<span id="rock-bttn" class="hand-bttn button"></span>
-				<span id="paper-bttn" class="hand-bttn button"></span>
-				<span id="scissors-bttn" class="hand-bttn button"></span>
-			</div>
-			<div id="player-container">
-				<div id="player-sprite" class="player-sprite-idle"></div>
-			</div>
-			<div id="computer-container">
-				<div id="computer-sprite" class="computer-sprite-idle"></div>
+			<button type="button" id="music-bttn" class="button"></button>
+			<div id="container">
+				<div id = "score">
+					<h2>Score</h2>
+					<h3>0 : 0</h3>
+				</div>
+				<div id="hand-buttons" class="hide">
+					<span id="rock-bttn" class="hand-bttn button"></span>
+					<span id="paper-bttn" class="hand-bttn button"></span>
+					<span id="scissors-bttn" class="hand-bttn button"></span>
+				</div>
+
+				<div id="player-sprite"></div>
+				<div id="computer-sprite"></div>
+
+				<div id="dialog-box" class="hide">
+					<p>Hah, looks like you won this round!</p>
+					<button type="button" id="continue-bttn" class="button dialog_button">Continue</button>
+				</div>
+
+
 			</div>
 		</div>
 
