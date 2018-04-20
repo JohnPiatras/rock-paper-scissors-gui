@@ -255,7 +255,7 @@ p {
 }
 
 
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-device-width: 1024px) {
     h1{
         font-size:16pt;
     }
