@@ -1,5 +1,10 @@
 @import url("reset.css");
 
+html, body{
+
+    height:100%;
+}
+
 body {
     font-family:"Press Start 2P";
 }
@@ -18,9 +23,6 @@ p {
 }
 /*Make game box have jaggy pixelated corners*/
 #game{
-    position:relative;
-    left:0;
-    top:0;
     margin-left:auto;
     margin-right:auto;
     padding-left:120px;
@@ -241,6 +243,7 @@ p {
     left:8px;
     width:48px;
     height:48px;
+    padding:0;
     background-image:url("../images/music-bttn.png");
     background-size:200%;
     border:none;
@@ -249,4 +252,73 @@ p {
 
 .music-bttn-off{
     background-position-x:100%;
+}
+
+
+@media only screen and (max-device-width: 640px) {
+    h1{
+        font-size:16pt;
+    }
+    #game{
+        min-width:320px;
+        width:80%;
+        margin:auto;
+
+        height:240px;
+        padding-left:0;
+        padding-right:0;
+    }
+
+    #player-sprite{
+        width:120px;
+        height:90px;
+        left:55px;
+    }
+
+    #computer-sprite{
+        width:120px;
+        height:120px;
+    }
+
+    #score{
+        width:50%;
+    }
+
+    #score h2{
+        font-size:12pt;
+
+    }
+
+    #score h3{
+        font-size:8pt;
+    }
+
+    #dialog-box p{
+        font-size:8pt;
+    }
+
+    .dialog_button{
+        font-size:8pt;
+        width:70%;
+        margin-left:15%;
+        border:5px solid yellow;
+    }
+
+    .hand-bttn{
+        width:48px;
+        height:48px;
+    }
+
+    #hand-buttons{
+        position:absolute;
+        height:16px;
+        left:56px;
+        bottom:132px;
+    
+    }
+
+    #music-bttn{
+        width:24px;
+        height:24px;
+    }
 }
