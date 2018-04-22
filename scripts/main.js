@@ -18,16 +18,20 @@ const valid_choices = ["rock", "paper", "scissors"];
 let game_state = "";
 let player_choice = "";
 let computer_choice = "";
-let music_on = true;
 let player_sprite;
 let computer_sprite;
 let player_score;
 let computer_score;
-let rounds_played; //use to indicate no games have been played yet
+let rounds_played; //use -1 to indicate no games have been played yet
+
+//persistent settings
+let music_on;
 
 initialise();
 
 function initialise(){
+    loadSettings();
+
     player_sprite = document.getElementById("player-sprite");
     computer_sprite = document.getElementById("computer-sprite");
 
@@ -45,6 +49,19 @@ function initialise(){
 
     rounds_played = -1;
     showDialogBox("Rock, paper scissors. Best of 5 rounds", "Play");
+}
+
+function loadSettings(){
+	if(!localStorage.rps_settings_music){
+		localStorage.rps_settings_music="true";
+	}
+	
+	music_on = localStorage.rps_settings_music == "true";
+	setMusicState(music_on);
+}
+
+function saveSettings(){
+	localStorage.rps_settings_music = music_on;
 }
 
 function clearClassList(element){
@@ -127,19 +144,22 @@ function onClickButton(e){
                 resetGame();
             break;
         case "music-bttn":
-            if(music_on){
-                music_on = false;
-                document.getElementById("music-loop").pause();
-            }else{
-                music_on = true;
-                document.getElementById("music-loop").play();
-            }
-            
-            
-            document.getElementById("music-bttn").classList.toggle("music-bttn-off");
-            break;
+            setMusicState(!music_on);
+         break;
     }
     
+}
+
+function setMusicState(state){
+    music_on = state;
+    if(music_on){
+        document.getElementById("music-loop").play();
+        document.getElementById("music-bttn").classList.remove("music-bttn-off");
+    }else{
+        document.getElementById("music-loop").pause();
+        document.getElementById("music-bttn").classList.add("music-bttn-off");
+    }
+    saveSettings();   
 }
 
 
