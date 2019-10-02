@@ -30,7 +30,8 @@ p {
     width:50%;
     min-width:640px;
     height:480px;
-    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
     border:10px solid blue;
     background-color:#AAA
 }
